@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+<div class="ui container">
+    <div class="ui huge header segment">Zaid's RESTful Blog App</div>
+		<div class="ui grid container">
+		<% blogs.forEach(function(blog){ %>
+			<div class="four wide column">
+				<h1><%= blog.title %></h1>
+				<img class="ui medium rounded image" src= "<%= blog.image %>">
+				<P><%= blog.created %></P>
+				<p><%= blog.body %></p>
+				<a href= "/blogs/<%= blog._id %>"><button class="ui inverted blue button">Show more</button></a>
+			</div>
+		<% }); %>
+		</div>
+	</div>
+</div>
+
+<%- include("partials/footer") %>
